@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.381
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoWebApp2", "DemoWebApp2\DemoWebApp2.csproj", "{B4A6F043-8CF0-4052-936D-5B432C457347}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Volumes", "Volumes", "{7378D852-E0D0-41E5-9435-D79FD839B82B}"
+	ProjectSection(SolutionItems) = preProject
+		Volumes\aks-keyvault-identity-prep.ps1 = Volumes\aks-keyvault-identity-prep.ps1
+		Volumes\aks-keyvault-identity-secrets.yml = Volumes\aks-keyvault-identity-secrets.yml
+		Volumes\aksvolume-namespace.yml = Volumes\aksvolume-namespace.yml
+		Volumes\aksvolume-prep.ps1 = Volumes\aksvolume-prep.ps1
+		Volumes\aksvolume-secrets.yml = Volumes\aksvolume-secrets.yml
+		Volumes\fileshare-setup.ps1 = Volumes\fileshare-setup.ps1
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DemoSqlDB", "DemoSqlDB\DemoSqlDB.sqlproj", "{FC4FABE9-1447-499A-8F2A-A3E8DA420A54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4A6F043-8CF0-4052-936D-5B432C457347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A6F043-8CF0-4052-936D-5B432C457347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A6F043-8CF0-4052-936D-5B432C457347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A6F043-8CF0-4052-936D-5B432C457347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4FABE9-1447-499A-8F2A-A3E8DA420A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4FABE9-1447-499A-8F2A-A3E8DA420A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4FABE9-1447-499A-8F2A-A3E8DA420A54}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FC4FABE9-1447-499A-8F2A-A3E8DA420A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4FABE9-1447-499A-8F2A-A3E8DA420A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4FABE9-1447-499A-8F2A-A3E8DA420A54}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82CE8974-7E28-4999-B81E-48FEC7BCA79C}
+	EndGlobalSection
+EndGlobal

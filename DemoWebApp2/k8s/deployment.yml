@@ -1,0 +1,65 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-web-app2
+  namespace: volumes
+spec:
+  selector:
+      matchLabels:
+        app: demo-web-app2
+  replicas: 2
+  template:
+      metadata:
+        labels:
+            app: demo-web-app2
+      spec:
+        containers:
+        - name: demo-web-app2
+          image: acrforaksdemo.azurecr.io/demo-web-app2:v2
+          imagePullPolicy: Always
+
+          env:
+          - name: AzureKeyVault__TenantId
+            valueFrom:
+              secretKeyRef:
+                name: keyvault-secret
+                key: azurekeyvaulttenantid
+          - name: AzureKeyVault__Endpoint
+            valueFrom:
+              secretKeyRef:
+                name: keyvault-secret
+                key: azurekeyvaultendpoint
+          - name: AzureKeyVault__ClientId
+            valueFrom:
+              secretKeyRef:
+                name: keyvault-secret
+                key: azurekeyvaultclientid
+          - name: AzureKeyVault__ClientSecret
+            valueFrom:
+              secretKeyRef:
+                name: keyvault-secret
+                key: azurekeyvaultclientsecret
+          volumeMounts:
+          - name: azurefileshare
+            mountPath: /app/wwwroot/azurevolume
+          readinessProbe:
+            httpGet:
+              port: 80
+              path: /
+          livenessProbe:
+            httpGet:
+              port: 80
+              path: /
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+        volumes:
+        - name: azurefileshare
+          azureFile:
+            secretName: storage-secret
+            shareName: aksvolume
+            readOnly: false

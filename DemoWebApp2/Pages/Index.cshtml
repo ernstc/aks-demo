@@ -1,0 +1,21 @@
+﻿@page
+@using DemoWebApp2.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<p>Countries:</p>
+<ul>
+    @foreach (Country item in ViewData.Model.Countries)
+    {
+        <li>@item.Name</li>
+    }
+</ul>
+
