@@ -3,7 +3,7 @@
 Sample web application that can be hosted in a Azure Kubernetes Cluster.
 
 This web application has sample code for the features below.
-* Cconnecting to an Azure SQL Database.
+* Connecting to an Azure SQL Database.
 * Mounting an Azure Storage File Share as volume.
 * Authentication with OpenId Connect Provider like Azure AD.
 
