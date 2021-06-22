@@ -1,12 +1,12 @@
 ﻿apiVersion: v1
 kind: Service
 metadata:
-  name: demo-web-app2-loadbalancer
+  name: demo-web-app-loadbalancer
   namespace: volumes
 spec:
   type: LoadBalancer
   selector:
-    app: demo-web-app2
+    app: demo-web-app
   ports:
   - protocol: TCP
     name: http

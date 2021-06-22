@@ -1,21 +1,21 @@
 ﻿apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-web-app2
+  name: demo-web-app
   namespace: volumes
 spec:
   selector:
       matchLabels:
-        app: demo-web-app2
+        app: demo-web-app
   replicas: 1
   template:
       metadata:
         labels:
-            app: demo-web-app2
+            app: demo-web-app
       spec:
         containers:
-        - name: demo-web-app2
-          image: acrforaksdemo001.azurecr.io/demo-web-app2:v22
+        - name: demo-web-app
+          image: acrforaksdemo001.azurecr.io/demo-web-app:v1
           imagePullPolicy: Always
           ports:
           - containerPort: 80
@@ -68,11 +68,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-web-app2
+  name: demo-web-app
   namespace: volumes
 spec:
   type: ClusterIP
   ports:
   - port: 80
   selector:
-    app: demo-web-app2
+    app: demo-web-app

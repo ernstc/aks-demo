@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DemoWebApp2.Models;
+using DemoWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace DemoWebApp2.Pages
+namespace DemoWebApp.Pages
 {
     public class IndexModel : PageModel
     {

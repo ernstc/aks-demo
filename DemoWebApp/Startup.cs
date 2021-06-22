@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using DemoWebApp2.Models;
+using DemoWebApp.Models;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,7 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Identity.Web;
 
 
-namespace DemoWebApp2
+namespace DemoWebApp
 {
     public class Startup
     {

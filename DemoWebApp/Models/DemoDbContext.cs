@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace DemoWebApp2.Models
+namespace DemoWebApp.Models
 {
     public class DemoDbContext : DbContext
     {

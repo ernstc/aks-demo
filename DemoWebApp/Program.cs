@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
 
-namespace DemoWebApp2
+namespace DemoWebApp
 {
     public class Program
     {

@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DemoWebApp2.Models
+namespace DemoWebApp.Models
 {
-    public class Region
+    public class Country
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Population { get; set; }
-        public virtual Country Country { get; set; }
+        public virtual IEnumerable<Region> Regions { get; set; }
     }
 }
