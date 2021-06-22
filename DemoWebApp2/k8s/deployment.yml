@@ -7,7 +7,7 @@ spec:
   selector:
       matchLabels:
         app: demo-web-app2
-  replicas: 2
+  replicas: 1
   template:
       metadata:
         labels:
@@ -15,9 +15,10 @@ spec:
       spec:
         containers:
         - name: demo-web-app2
-          image: acrforaksdemo.azurecr.io/demo-web-app2:v2
+          image: acrforaksdemo001.azurecr.io/demo-web-app2:v22
           imagePullPolicy: Always
-
+          ports:
+          - containerPort: 80
           env:
           - name: AzureKeyVault__TenantId
             valueFrom:
@@ -63,3 +64,15 @@ spec:
             secretName: storage-secret
             shareName: aksvolume
             readOnly: false
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-web-app2
+  namespace: volumes
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: demo-web-app2

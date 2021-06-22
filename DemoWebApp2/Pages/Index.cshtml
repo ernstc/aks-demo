@@ -1,12 +1,20 @@
 ﻿@page
+@using System.Security.Claims
 @using DemoWebApp2.Models
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+
+    string userFullName = "";
+    if (User.HasClaim(c => c.Type == "name"))
+    {
+        string claimValue = User.FindFirst(c => c.Type == "name").Value;
+        userFullName = $", {claimValue}";
+    }
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Welcome<span>@userFullName</span></h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 

@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aksdemo-ingress
+  namespace: volumes
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-buffer-size: 128k
+    nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    nginx.ingress.kubernetes.io/proxy-buffers-number: "4"
+spec:
+  tls:
+  - hosts:
+    - app.aksdemo.net
+    secretName: aksdemo-ingress-tls
+  rules:
+  - host: app.aksdemo.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: demo-web-app2
+            port:
+              number: 80
